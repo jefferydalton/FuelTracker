@@ -1,1 +1,1 @@
-Simple Twitter Analyzer application to explore Friends and Followers.  Maybe someday this will be more, but for now this is it.  
+Simple Fuel milage tracking application. 
