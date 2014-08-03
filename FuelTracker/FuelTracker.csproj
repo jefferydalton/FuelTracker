@@ -39,15 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Model\Station\Station.cs" />
+    <Compile Include="Domain\Model\Station\StationId.cs" />
+    <Compile Include="Extensions\ValueObjectRules.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\Station\" />
     <Folder Include="Application\Vehicle\" />
     <Folder Include="Application\Workshop\" />
-    <Folder Include="Domain\Station\" />
-    <Folder Include="Domain\Vehicle\" />
-    <Folder Include="Domain\Workshop\" />
+    <Folder Include="Domain\Model\Vehicle\" />
+    <Folder Include="Domain\Model\Workshop\" />
     <Folder Include="PortAdapters\Event\" />
     <Folder Include="PortAdapters\Messaging\" />
     <Folder Include="PortAdapters\Persistence\" />
