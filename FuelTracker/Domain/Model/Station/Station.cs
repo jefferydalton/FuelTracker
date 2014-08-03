@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FuelTracker.Domain.Station
+namespace FuelTracker.Domain.Model.Station
 {
-    public class Station
+    public class StationAggregate
     {
-        internal Station() { }
+        internal StationAggregate() { }
 
 
     }
