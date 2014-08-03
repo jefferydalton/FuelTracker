@@ -3,7 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace FuelTracker.Tests.Domain.Model.Station
+namespace Com.DDS.FuelTracker.Tests.Domain.Model.Station
 {
     /// <summary>
     /// Summary description for StationTest
@@ -69,7 +69,7 @@ namespace FuelTracker.Tests.Domain.Model.Station
         public void Station_IdCreatedCorrectly()
         {
             var result = new FuelTracker.Domain.Model.Station.StationId(10);
-            Assert.AreEqual((Int32)10, result.Id);
+            Assert.AreEqual((Int32)10, result.Value);
         }
     }
 }

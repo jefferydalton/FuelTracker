@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A7789837-6E25-47F5-BD91-64ED1DB3D33F}</ProjectGuid>
+    <ProjectGuid>{F9371CFF-B76B-448A-8A33-A450D52928A4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Com.DDS.FuelTracker.Tests</RootNamespace>
-    <AssemblyName>FuelTracker.Tests</AssemblyName>
+    <RootNamespace>Com.DDS.Common.Test</RootNamespace>
+    <AssemblyName>Common.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -50,21 +50,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Domain.Model\Station\StationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Application\" />
-    <Folder Include="PortAdapters\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{af1f69f8-194e-411a-99c3-89c158254bf5}</Project>
       <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FuelTracker\FuelTracker.csproj">
-      <Project>{e4626677-4286-4111-a489-837bf46041a0}</Project>
-      <Name>FuelTracker</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

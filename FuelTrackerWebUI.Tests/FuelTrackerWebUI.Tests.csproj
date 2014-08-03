@@ -9,7 +9,7 @@
     <ProjectGuid>{0592DECB-147B-4EA9-B8C4-6DCD61EA54A5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FuelTrackerWebUI.Tests</RootNamespace>
+    <RootNamespace>Com.DDS.FuelTrackerWebUI.Tests</RootNamespace>
     <AssemblyName>FuelTrackerWebUI.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
