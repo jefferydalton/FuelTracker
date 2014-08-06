@@ -6,16 +6,32 @@ using System.Threading.Tasks;
 
 namespace Com.DDS.FuelTracker.Domain.Model.Station
 {
-    public class StationAggregate
+    public class StationAggregate : Entity
     {
-        private StationAggregate() { }
+        private StationAggregate() : base() { }
 
-        internal StationAggregate(StationId id)
+        internal StationAggregate(StationId aStationId,
+                                  String aStationName) : base()
         {
-            this.Id = id;
+            this.Id = aStationId;
+            this.StationName = aStationName;
         }
 
         public StationId Id { get; private set; }
 
+        public string StationName {
+            get { return name; }
+            private set
+            {
+                this.AssertArgumentNotEmpty(value, "Cannot use Null as StationName");
+                this.name = value;
+            }
+        }
+        private string name;
+
+        public void ChangeStationName(string newStationName)
+        {
+            this.StationName = newStationName;
+        }
     }
 }

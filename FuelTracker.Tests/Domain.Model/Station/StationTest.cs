@@ -71,5 +71,31 @@ namespace Com.DDS.FuelTracker.Tests.Domain.Model.Station
             var result = new FuelTracker.Domain.Model.Station.StationId(10);
             Assert.AreEqual((Int32)10, result.Value);
         }
+
+
+        [TestMethod]
+        public void Station_AggregateCreatedCorrectly()
+        {
+            var testID = new FuelTracker.Domain.Model.Station.StationId(10);
+            var testName = "Test Name";
+            var result = new FuelTracker.Domain.Model.Station.StationAggregate(testID,
+                                                                               testName);
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.StationName == testName);
+            Assert.IsTrue(result.ConcurrencyVersion == 0);
+            Assert.AreEqual(testID, result.Id);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Station_AggregateCreateInvalid_EmptyName()
+        {
+            var testID = new FuelTracker.Domain.Model.Station.StationId(10);
+            var testName = string.Empty;
+            var result = new FuelTracker.Domain.Model.Station.StationAggregate(testID,
+                                                                               testName);
+            Assert.IsNull(result);
+        }
+
     }
 }

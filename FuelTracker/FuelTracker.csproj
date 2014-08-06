@@ -39,9 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain.Model\Entity.cs" />
+    <Compile Include="Domain.Model\Station\IStationRepository.cs" />
     <Compile Include="Domain.Model\Station\StationAggregate.cs" />
     <Compile Include="Domain.Model\Station\StationId.cs" />
     <Compile Include="Domain.Model\ValueObject.cs" />
+    <Compile Include="Port.Adapter\Persistence\InMemoryStationRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
