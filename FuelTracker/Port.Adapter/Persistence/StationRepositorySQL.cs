@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Com.DDS.FuelTracker.Port.Adapter.Persistence
 {
-    public class InMemoryStationRepository : IStationRepository
+    public class StationRepositorySQL : IStationRepository
     {
         public StationId NextIdentity()
         {
-            return new StationId(new Random().Next(int.MinValue, int.MaxValue));
+            return new StationId(10);
         }
 
         public List<StationAggregate> AllStations()

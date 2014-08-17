@@ -17,7 +17,19 @@ namespace Com.DDS.FuelTracker.Domain.Model.Station
             this.StationName = aStationName;
         }
 
-        public StationId Id { get; private set; }
+        public StationId Id
+        {
+            get
+            {
+                return this.id;
+            }
+            private set 
+            {
+                this.AssertArgumentNotNull(value, "Must provide a valid Id.");
+                this.id = value;
+            } 
+        }
+        private StationId id;
 
         public string StationName {
             get { return name; }
