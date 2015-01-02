@@ -8,10 +8,16 @@ namespace Com.DDS.FuelTracker.Domain.Model.Station
 {
     public interface IStationRepository
     {
-        StationId NextIdentity();
+        IReadOnlyList<StationBase> GetAllStations();
 
-        List<StationAggregate> AllStations();
+        StationBase GetStationOfId(Guid aId);
 
-        void Save(StationAggregate aStation);
+        StationBase GetStationOfName(string aName);
+
+        void SaveStation(StationBase aStation);
+
+        void AddStation(StationBase aStation);
+
+        void RemoveStation(StationBase aStation);
     }
 }

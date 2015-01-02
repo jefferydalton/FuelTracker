@@ -17,24 +17,11 @@ namespace Com.DDS.FuelTracker.Tests.Domain.Model.Station
             //
         }
 
-        [Fact]
-        public void Station_IdWithZeroThrowsException()
-        {
-            Exception ex = Assert.Throws<ArgumentException>(() => new FuelTracker.Domain.Model.Station.StationId(0));
-        }
-
-        [Fact]
-        public void Station_IdCreatedCorrectly()
-        {
-            var result = new FuelTracker.Domain.Model.Station.StationId(10);
-            Assert.Equal((Int32)10, result.Value);
-        }
-
 
         [Fact]
         public void Station_AggregateCreatedCorrectly()
         {
-            var testID = new FuelTracker.Domain.Model.Station.StationId(10);
+            var testID = Guid.NewGuid();
             var testName = "Test Name";
             var result = new FuelTracker.Domain.Model.Station.StationAggregate(testID,
                                                                                testName);
@@ -47,7 +34,7 @@ namespace Com.DDS.FuelTracker.Tests.Domain.Model.Station
         [Fact]
         public void Station_AggregateCreateInvalid_EmptyName()
         {
-            var testID = new FuelTracker.Domain.Model.Station.StationId(10);
+            var testID = Guid.NewGuid();
             var testName = string.Empty;
             Exception ex = Assert.Throws<ArgumentException>(() => new FuelTracker.Domain.Model.Station.StationAggregate(testID, testName));
         }

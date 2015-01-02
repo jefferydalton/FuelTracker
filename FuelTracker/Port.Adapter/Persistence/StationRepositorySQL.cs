@@ -1,4 +1,6 @@
 ﻿using Com.DDS.FuelTracker.Domain.Model.Station;
+using NHibernate;
+using NHibernate.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,19 +9,43 @@ using System.Threading.Tasks;
 
 namespace Com.DDS.FuelTracker.Port.Adapter.Persistence
 {
-    public class StationRepositorySQL : IStationRepository
+    public class StationRepositorySQL : AbstractHibernateSession, IStationRepository
     {
-        public StationId NextIdentity()
+        private StationRepositorySQL() :base(null)
         {
-            return new StationId(10);
         }
 
-        public List<StationAggregate> AllStations()
+        public StationRepositorySQL(ISessionFactory aSessionFactory) :base(aSessionFactory)
+        {
+        }
+
+        public IReadOnlyList<StationBase> GetAllStations()
+        {
+            using (ISession session = this.OpenSession())
+                return session.Query<StationBase>().ToList().AsReadOnly();
+        }
+
+        public StationBase GetStationOfId(Guid aId)
         {
             throw new NotImplementedException();
         }
 
-        public void Save(StationAggregate aStation)
+        public StationBase GetStationOfName(string aName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddStation(StationBase aStation)
+        {
+
+        }
+
+        public void SaveStation(StationAggregate aStation)
+        {
+            
+        }
+
+        public void RemoveStation(StationAggregate aStation)
         {
             throw new NotImplementedException();
         }

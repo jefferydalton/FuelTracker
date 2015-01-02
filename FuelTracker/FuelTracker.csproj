@@ -52,10 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain.Model\Entity.cs" />
+    <Compile Include="Domain.Model\Station\StationBase.cs" />
     <Compile Include="Domain.Model\Station\IStationRepository.cs" />
-    <Compile Include="Domain.Model\Station\StationAggregate.cs" />
-    <Compile Include="Domain.Model\Station\StationId.cs" />
+    <Compile Include="Domain.Model\Station\FuelStation.cs" />
+    <Compile Include="Domain.Model\Station\StationService.cs" />
     <Compile Include="Domain.Model\ValueObject.cs" />
+    <Compile Include="Port.Adapter\Persistence\AbstractHibernateSession.cs" />
     <Compile Include="Port.Adapter\Persistence\StationRepositorySQL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,6 +72,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Port.Adapter\Persistence\Mappings\StationAggregate.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
